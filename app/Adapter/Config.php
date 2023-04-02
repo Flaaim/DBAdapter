@@ -4,7 +4,7 @@ namespace App\Adapter;
 
 class Config
 {
-    public $driver = "Pdo";
+    public $driver = "Mysqli";
     public $host = "192.168.56.56";
     public $user = "homestead";
     public $password = "secret";

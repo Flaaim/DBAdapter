@@ -10,4 +10,4 @@ $config = new Config;
 
 $db = DBFactory::connect($config);
 
-$cat = $db->fetch("SELECT * FROM categories");
+$cat = $db->fetch("SELECT * FROM dbtest");
