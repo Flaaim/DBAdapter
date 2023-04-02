@@ -2,7 +2,7 @@
 
 namespace App\Adapter;
 
-use App\Config;
+use App\Adapter\Config;
 
 interface AdapterInterface
 {

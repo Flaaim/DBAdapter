@@ -3,7 +3,7 @@
 namespace App\Adapter;
 
 use App\Adapter\AdapterInterface;
-use App\Config;
+use App\Adapter\Config;
 
 class Pdo implements AdapterInterface
 {
@@ -14,7 +14,9 @@ class Pdo implements AdapterInterface
     public function connect($config)
     {
         try{
-            $this->dbh = new \PDO("mysql:host=".$config::HOST.";dbname=".$config::DB, $config::USER, $config::PASSWORD, self::OPTIONS);
+            $dsn = sprintf("mysql:host=%s;dbname=%s", $config->host, $config->db);
+            
+            $this->dbh = new \PDO($dsn, $config->user, $config->password);
         }catch(\PDOException $e){
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
